@@ -1,1 +1,905 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import "~assets/css/icomoon.css";
+@import '~material-design-icons/iconfont/material-icons.css';
+@import "assets/css/big-html.css";
+@import "assets/css/material.css";
+
+/*----------- CSS Version 2 (Standar) ----------------*/
+
+@font-face {
+    font-family: "avenir-regular";
+    src: url('assets/fonts/regular.otf');
+}
+
+@font-face {
+    font-family: "avenir-demi";
+    src: url('assets/fonts/demi.otf');
+}
+
+@font-face {
+    font-family: "avenir-bold";
+    src: url('assets/fonts/bold.otf');
+}
+
+@font-face {
+    font-family: "avenir-heavy";
+    src: url('assets/fonts/heavy.otf');
+}
+
+@font-face {
+    font-family: "avenir-ultra-ligth";
+    src: url('assets/fonts/ultra-ligth.otf');
+}
+
+@font-face {
+    font-family: "avenir-cn";
+    src: url('assets/fonts/cn.otf');
+}
+
+
+/*Etiqueta html*/
+
+body {
+    font-family: "avenir-regular";
+    padding: 0;
+    margin: 0;
+    position: relative;
+    background: #fff;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    height: calc(100vh - 63px);
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+
+/*Acomodos de grilla 
+estas clases son para alinear elementos y cuadrar se pueden agregar algun conportamiento usando como base estas clases 
+en cualquier modulo*/
+
+.acomodar-horizontal {
+    display: flex;
+    flex-direction: row !important;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+}
+
+.acomodar-horizontal-con-espacios {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+
+
+/*alinear baseline*/
+
+.acomodar-horizontal-con-espacios.responsive,
+.acomodar-horizontal.baseline {
+    align-items: baseline;
+}
+
+
+/*con desborde*/
+
+.acomodar-horizontal-con-espacios.wrap,
+.acomodar-horizontal.wrap {
+    flex-wrap: wrap;
+}
+
+
+/*Grilla del maquetado clases generales titulo principales y migas de pan*/
+
+.big-section-titulo {
+    font-family: "avenir-demi";
+    margin-top: 63px;
+    width: 100%;
+    position: relative;
+    /*background: #fafafa;*/
+    color: #43413B;
+    padding: 5px 16px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.big-section-titulo .big-url-historial {
+    font-family: "avenir-regular";
+    height: auto;
+    color: #7E7E7E;
+    font-size: 15px;
+    margin-left: 0;
+    padding: 10px 0;
+}
+
+.big-section-titulo .big-titulo-modulo {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 0;
+    font-size: 30px;
+}
+
+
+/*Grilla clases generales cuerpo*/
+
+
+/*Para cada seccion debe ir el html asi*/
+
+
+/*<section class="big-section">
+        <article class="big-seccion-contenedor">
+            <div class="titulo"></div>
+            <div class="contenido"></div>
+        </article>
+    </section>
+    
+    Para configurar la altura adaptativa de .big-section article favor de modificar esta clase 
+    en el modulo a ocupar, esta son solo globalespara maquetado*/
+
+.big-section {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.big-section article {
+    position: relative;
+    width: calc(100% - 40px);
+    max-width: 100%;
+    background: #fff;
+    display: inline-block;
+    margin: 30px 20px;
+    border-radius: 5px;
+    min-height: 0;
+}
+
+
+/*Secciones */
+
+.big-contenedor-secciones {
+    display: flex;
+    min-height: auto;
+}
+
+.big-contenedor-secciones .big-seccion-contenedor {
+    border-radius: 0;
+}
+
+.big-seccion-contenedor {
+    border-radius: 0px;
+    overflow-y: auto;
+    position: relative;
+}
+
+.big-seccion-contenedor .titulo {
+    padding-bottom: 5px;
+    width: 100%;
+    color: #43413b;
+    font-weight: 300;
+    font-family: "avenir-regular";
+    font-size: 17px !important;
+}
+
+.big-seccion-contenedor .contenido {
+    background-color: #faf9f9;
+    border-top: 2px solid #006341;
+    -moz-box-shadow: 0 0px 1px rgb(226, 222, 222);
+    -webkit-box-shadow: 0 0px 1px rgb(226, 222, 222);
+    box-shadow: 0 0px 1px rgb(226, 222, 222);
+    height: auto;
+    padding-bottom: 1px;
+}
+
+
+/*Clases material design*/
+
+
+/*Para agregar un input de busqueda es importante agregar al  mat-form-field  class="big-input-busqueda" appearance="fill" big-input-busqueda y las clase esto permite que tome el css correcto*/
+.filtroMonitor.mat-form-field-appearance-fill .mat-form-field-flex {
+    font-size: 15px !important;
+    padding: 0px 10px !important;
+    background: #fff !important;
+    border-bottom: 1px solid #006341 !important;
+}
+
+.big-input-busqueda.mat-form-field-appearance-fill .mat-form-field-flex {
+    font-size: 15px !important;
+    padding: 0px 10px !important;
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    border-radius: 30px !important;
+    background: #fff !important;
+    border: 1px solid #006341 !important;
+}
+
+.big-input-busqueda .mat-form-field-underline {
+    display: none !important;
+}
+
+.big-input-busqueda .mat-icon {
+    color: #006341 !important;
+}
+
+
+/*Input fill con borde para usar el input lleno hay agregar la clase .big-input-standar y 
+    la etiqueta class="big-input-standar" floatLabel="always" appearance="fill" para que tome los estilos, el ancho de los inputs los deberas poner en el modulo a usar */
+
+.big-input-standar.mat-form-field-appearance-fill {
+    margin-bottom: 35px !important;
+}
+
+.big-input-standar.mat-form-field-appearance-fill .mat-select-arrow-wrapper {
+    transform: translateY(0);
+}
+
+.big-input-standar.mat-form-field-appearance-fill .mat-form-field-flex {
+    border-radius: 3px !important;
+    padding: 0px .75em 0 .75em !important;
+    border: 1px solid #b3b3b3;
+    background: #fff !important;
+}
+
+.big-input-standar.mat-form-field-appearance-fill .mat-form-field-infix {
+    padding: 0 0 .75em 0 !important;
+}
+
+.big-input-busqueda.mat-form-field-appearance-fill .mat-form-field-subscript-wrapper,
+.big-input-standar.mat-form-field-appearance-fill .mat-form-field-subscript-wrapper {
+    font-family: "avenir-regular";
+    padding: 0;
+    margin: 0;
+    margin-top: 5px;
+    font-size: 12px;
+}
+
+.big-input-standar .mat-form-field-prefix .mat-icon,
+.big-input-standar .mat-form-field-suffix .mat-icon {
+    color: #006341 !important;
+    font-size: 150%;
+    line-height: 0;
+    position: absolute;
+    right: 10px;
+    top: 20px;
+}
+
+.big-input-standar .mat-form-field-underline {
+    display: none !important;
+}
+
+.big-input-standar .mat-form-field-label {
+    top: 0px !important;
+    z-index: 9999 !important;
+    position: absolute !important;
+    left: -13px !important;
+    font-size: 20px !important;
+    font-family: "avenir-regular";
+}
+
+.big-input-standar .mat-form-field-label-wrapper {
+    top: -13px !important;
+    padding-top: 0;
+    left: 0px !important;
+    overflow: inherit !important;
+    z-index: 9;
+}
+
+.big-input-standar .mat-form-field-infix {
+    border-top: 10px solid transparent !important;
+}
+
+.big-input-standar .mat-form-field-suffix {
+    position: absolute !important;
+    right: 0 !important;
+}
+
+input.mat-input-element {
+    font-size: 15px;
+    font-family: "avenir-regular";
+}
+
+
+/*botones*/
+
+.big-btn-verde {
+    background: #006341;
+    color: #fff;
+    border-radius: 2px !important;
+}
+
+.big-btn-amarillo {
+    background: #fecd2f;
+    color: #fff;
+    border-radius: 2px !important;
+}
+
+.big-btn-rojo {
+    background: red;
+    color: #fff;
+    border-radius: 2px !important;
+}
+
+.big-btn-normal {
+    border-radius: 2px !important;
+    color: #006341;
+}
+
+.big-btn-verde,
+.big-btn-amarillo,
+.big-btn-rojo,
+.big-btn-normal {
+    font-family: "avenir-demi";
+}
+
+
+/*flechas para panel, para colocar una flecha es indispensable crear un div vacio con el 
+nombre de la clase deseada, el tamaño y color dependera de las propiedades 
+color: #000; border-bottom-width: 10px; border-width: 10px;
+y se pueden crear clases extras en el modulo correspondiente paran o afectar el style general*/
+
+.big-flecha-up {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid black;
+}
+
+.big-flecha-down {
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid #f00;
+}
+
+.big-flecha-right {
+    width: 0;
+    height: 0;
+    border-top: 60px solid transparent;
+    border-bottom: 60px solid transparent;
+    border-left: 60px solid green;
+}
+
+.big-flecha-left {
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid blue;
+}
+
+
+/*
+    tablas agregar la clase .big-tabla-v2 en la etiqueta table y para el paginador agregar la clase 
+    siguiente en el modulo deseado:
+        .mat-paginator {
+            background: transparent;
+            margin-right: 26px;
+        }
+    para mover el texto solo agregue la clase izquierda, derecha o centrado class="big-tabla-v2 centrado"
+*/
+
+.big-tabla-v2 {
+    background: transparent;
+    width: 96%;
+    margin: 0 2% 20px 2%;
+    border: 0;
+}
+
+.big-tabla-v2 tr th {
+    font-family: "avenir-demi";
+    background: transparent;
+    color: #000;
+    font-size: 14px;
+}
+
+.big-tabla-v2 tr td {
+    font-family: "avenir-regular";
+    background-color: #fff;
+    font-size: 14px;
+}
+
+.big-tabla-v2 tr:nth-child(even) td {
+    background-color: #f2f2f2;
+}
+
+.big-tabla-v2.izquierda {
+    text-align: left;
+}
+
+.big-tabla-v2.derecha {
+    text-align: right;
+}
+
+.big-tabla-v2.centrado {
+    text-align: center;
+}
+
+
+/*Contenedores la estructura de la tarjeta debe ir 
+    <div class="big-tarjeta-amarilla">
+        <div class="titulo"></div>
+        <div class="subtitulo"></div>
+        <table></table>
+        <div class="opciones></div>
+    </div>
+"*/
+
+.big-tarjeta-roja {
+    border-top: 8px solid red;
+}
+
+.big-tarjeta-amarilla {
+    border-top: 8px solid #fecd2f;
+}
+
+.big-tarjeta-verde {
+    border-top: 8px solid #006341;
+}
+
+.big-tarjeta-roja,
+.big-tarjeta-verde,
+.big-tarjeta-amarilla {
+    margin: 15px;
+    background-color: #ffffff;
+    box-shadow: 0 0px 1px rgb(226, 222, 222);
+    display: block;
+    width: 94%;
+    padding: 1%;
+}
+
+.big-tarjeta-roja .titulo,
+.big-tarjeta-verde .titulo,
+.big-tarjeta-amarilla .titulo {
+    font-size: 15px;
+    font-weight: bold;
+    color: #717171;
+    width: auto;
+    padding-bottom: 0;
+    display: inline-block;
+}
+
+.big-tarjeta-roja .subtitulo,
+.big-tarjeta-verde .subtitulo,
+.big-tarjeta-amarilla .subtitulo {
+    font-size: 14px;
+    color: #717171;
+}
+
+.big-tarjeta-roja .titulo,
+.big-tarjeta-roja .subtitulo,
+.big-tarjeta-verde .titulo,
+.big-tarjeta-verde .subtitulo,
+.big-tarjeta-amarilla .titulo,
+.big-tarjeta-amarilla .subtitulo {
+    margin: 9px 26px;
+}
+
+.big-tarjeta-roja.izquierda {
+    border-top: 0;
+    width: 88%;
+    padding: 5px;
+    border-left: 8px solid red;
+}
+
+.big-tarjeta-verde.izquierda {
+    border-top: 0;
+    width: 88%;
+    padding: 5px;
+    border-left: 8px solid #006341;
+}
+
+.big-tarjeta-amarilla.izquierda {
+    border-top: 0;
+    width: 88%;
+    padding: 5px;
+    border-left: 8px solid #fecd2f;
+}
+
+.big-tarjeta-roja.focusable,
+.big-tarjeta-verde.focusable,
+.big-tarjeta-amarilla.focusable {
+    cursor: pointer;
+}
+
+
+/*tabla dentro de tarjetas*/
+
+.big-tarjeta-roja .big-tabla-v2,
+.big-tarjeta-verde .big-tabla-v2,
+.big-tarjeta-amarilla .big-tabla-v2 {
+    border-top: 1px solid #ccc;
+    padding-top: 15px;
+}
+
+.big-tarjeta-roja .big-tabla-v2 tr td,
+.big-tarjeta-roja .big-tabla-v2 tr th,
+.big-tarjeta-verde .big-tabla-v2 tr td,
+.big-tarjeta-verde .big-tabla-v2 tr th,
+.big-tarjeta-amarilla .big-tabla-v2 tr td,
+.big-tarjeta-amarilla .big-tabla-v2 tr th {
+    padding: 5px;
+}
+
+.big-tarjeta-roja .big-tabla-v2 tr td,
+.big-tarjeta-verde .big-tabla-v2 tr td,
+.big-tarjeta-amarilla .big-tabla-v2 tr td {
+    font-size: 14px;
+    color: #717171;
+}
+
+.big-tarjeta-roja .big-tabla-v2 tr th,
+.big-tarjeta-verde .big-tabla-v2 tr th,
+.big-tarjeta-amarilla .big-tabla-v2 tr th {
+    padding-bottom: 12px;
+}
+
+
+/*Para que los modales puedan funcionar es necesario que tenga la siguiente estructura:
+<div class="big-modales-standar">
+    <div class="cerrar" (click)="alguna funcion para cerrar"><img src="assets/img/iconos/v2-ic-cerrar.svg"></div>
+    <div class="titulo"></div>
+    <div class="contenido"></div>
+    <div class="acciones"></div>
+</div>
+si quieren cambiar el tamaño de ancho solo agreguen esta calse en el modulo deseado .cdk-overlay-pane { max-width: tamaño-deseado !important; }*/
+
+
+.big-modales-standar .titulo {
+    width: 100%;
+    padding: 0 0 12px 0;
+    margin: 20px 0 12px 0;
+    border-bottom: 2px solid #006341;
+    font-size: 23px;
+}
+
+.big-modales-standar .contenido {
+    width: auto;
+    margin: 20px;
+}
+
+.big-modales-standar .acciones {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 20px;
+}
+
+.big-modales-standar .acciones button {
+    margin-left: 10px;
+}
+
+.big-modales-standar .cerrar {
+    width: 30px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+}
+
+.big-modales-standar .cerrar img {
+    width: 100%;
+}
+
+.mat-dialog-container {
+    position: relative !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    text-align: center !important;
+    border: 1px solid #E0E0DE !important;
+    -moz-box-shadow: 0px 0px 11px rgb(204, 202, 202) !important;
+    -webkit-box-shadow: 0px 0px 11px rgb(204, 202, 202) !important;
+    box-shadow: 0px 0px 11px rgb(204, 202, 202) !important;
+    padding-bottom: 20px !important;
+}
+
+
+
+/*Tabs*/
+
+.mat-tab-labels {
+    width: calc(100% - 40px);
+    margin: 20px 20px 0 20px;
+    border: 0;
+}
+
+.mat-tab-label {
+    background: #787979 !important;
+    color: #fff !important;
+    font-size: 16px !important;
+    width: 100% !important;
+    font-family: "avenir-demi";
+}
+
+.mat-tab-label-active {
+    background: #006341 !important;
+}
+
+.big-modales-standar .cerrar img {
+    width: 100%;
+}
+
+.mat-dialog-container {
+    position: relative !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    text-align: center !important;
+    border: 1px solid #E0E0DE !important;
+    -moz-box-shadow: 0px 0px 11px rgb(204, 202, 202) !important;
+    -webkit-box-shadow: 0px 0px 11px rgb(204, 202, 202) !important;
+    box-shadow: 0px 0px 11px rgb(204, 202, 202) !important;
+    padding-bottom: 20px !important;
+}
+
+.mat-tab-group.mat-primary .mat-ink-bar,
+.mat-tab-nav-bar.mat-primary .mat-ink-bar {
+    background-color: #006341 !important;
+    height: 3px !important;
+}
+
+.mat-tab-header,
+.mat-tab-nav-bar {
+    border-bottom: 0 !important;
+}
+
+.mat-tab-labels {
+    width: calc(100% - 40px);
+    margin: 20px 20px 0 20px;
+    border: 0;
+}
+
+/*Formularios y radios en panel*/
+
+.big-panel .big-section {
+    margin: 20px;
+    width: calc(100% - 40px);
+}
+
+.big-panel .big-section .big-input-standar.mat-form-field-appearance-fill {
+    margin-bottom: 0 !important;
+}
+
+.big-panel .big-section .titulo .mat-radio-button {
+    margin-left: 20px;
+}
+
+.mat-tab-label {
+    background: #787979 !important;
+    color: #fff !important;
+    font-size: 16px !important;
+    width: 100% !important;
+    font-family: "avenir-demi";
+}
+
+.mat-tab-label-active {
+    background: #006341 !important;
+}
+
+.mat-tab-group.mat-primary .mat-ink-bar,
+.mat-tab-nav-bar.mat-primary .mat-ink-bar {
+    background-color: #006341 !important;
+    height: 3px !important;
+}
+
+.mat-tab-header,
+.mat-tab-nav-bar {
+    border-bottom: 0 !important;
+}
+
+/*Estilos de los Datepicker*/
+
+.mat-calendar-body-selected {
+    background-color: #006341 !important;
+    color: #fff;
+}
+
+.mat-datepicker-toggle-active {
+    color: #006341 !important;
+}
+
+.mat-calendar-cell-semi-selected {
+    background-color: #19976bb7 !important;
+}
+
+.mat-calendar-body-begin-range:not(.mat-calendar-body-end-range) {
+    border-radius: 100% 0 0 100%;
+    background-color: #19976bb7;
+}
+
+.mat-calendar-body-end-range:not(.mat-calendar-body-begin-range) {
+    border-radius: 0 100% 100% 0;
+    background-color: #19976bb7;
+}
+/*Formularios y radios en panel*/
+
+.big-panel .big-section {
+    margin: 20px;
+    width: calc(100% - 40px);
+}
+
+.big-panel .big-section .big-input-standar.mat-form-field-appearance-fill {
+    margin-bottom: 0 !important;
+}
+
+.big-panel .big-section .titulo .mat-radio-button {
+    margin-left: 20px;
+}
+
+/*Estilos de los Datepicker*/
+
+.mat-calendar-body-selected {
+    background-color: #006341 !important;
+    color: #fff;
+}
+
+.mat-datepicker-toggle-active {
+    color: #006341 !important;
+}
+
+/*Estilos Slide Toggle*/
+.mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
+    background-color: rgb(174, 174, 174) !important;
+}
+.mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
+    background-color: #006341 !important;
+}
+.mat-slide-toggle-content {
+    font-family: "avenir-regular" !important;
+}
+
+.mat-calendar-cell-semi-selected {
+    background-color: #19976bb7 !important;
+}
+
+.mat-calendar-body-begin-range:not(.mat-calendar-body-end-range) {
+    border-radius: 100% 0 0 100%;
+    background-color: #19976bb7;
+}
+
+.mat-calendar-body-end-range:not(.mat-calendar-body-begin-range) {
+    border-radius: 0 100% 100% 0;
+    background-color: #19976bb7;
+}
+
+
+
+/*Estilos Slide Toggle*/
+.mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
+    background-color: rgb(174, 174, 174) !important;
+}
+.mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
+    background-color: #006341 !important;
+}
+.mat-slide-toggle-content {
+    font-family: "avenir-regular" !important;
+}
+
+
+.mat-form-field-appearance-outline .mat-form-field-outline {
+    color: #006341 !important;
+  } 
+
+
+
+
+/* Media Query Max Width 1366px */
+
+@media only screen and (max-width: 1366px) {}
+
+
+/* Media Query Max Width 1214px */
+
+@media only screen and (max-width: 1214px) {
+    .big-input40 {
+        width: calc(49%);
+        display: block !important;
+    }
+    .big-renglon .big-botonera {
+        text-align: end;
+    }
+}
+
+
+/* Media Query Max Width 1024px */
+
+@media only screen and (max-width: 1024px) {}
+
+
+/* Media Query Max Width 812px */
+
+@media only screen and (max-width: 812px) {
+    .big-panel.md {
+        width: calc(64%);
+    }
+}
+
+
+/* Media Query Max Width 768px */
+
+@media only screen and (max-width: 768px) {}
+
+
+/* Media Query Max Width 636px */
+
+@media only screen and (max-width: 636px) {
+    .big-panel.md {
+        width: calc(70%);
+    }
+    .big-panel h2 {
+        margin-left: 20px;
+        font-size: 19px;
+    }
+}
+
+
+/* Media Query Max Width 592px */
+
+@media only screen and (max-width: 592px) {
+    .big-input40 {
+        width: calc(75%);
+        display: block !important;
+    }
+    .big-renglon .big-botonera {
+        text-align: initial;
+    }
+    .big-responsive-aut {
+        margin-left: -10px;
+    }
+}
+
+
+/* Media Query Max Width 480px */
+
+@media only screen and (max-width: 480px) {
+    .big-responsive-aut {
+        margin-left: -19px;
+    }
+    .big-panel h2 {
+        margin-left: 20px;
+        font-size: 18px;
+    }
+    .big-panel-cerrar .mat-icon {
+        font-size: 28px;
+        color: #5f5f5f;
+        cursor: pointer;
+    }
+}
+
+
+/*Media Query Mex Width 348px*/
+
+@media only screen and(max-width: 348px) {
+    .big-panel h2 {
+        margin-left: 20px;
+        font-size: 17px;
+    }
+    .big-panel-cerrar .mat-icon {
+        font-size: 26px;
+        color: #5f5f5f;
+        cursor: pointer;
+    }
+}
+
+
+/* Media Query Max Width 320px */
+
+@media only screen and (max-width: 320px) {
+    .big-input40 {
+        width: calc(90%);
+        display: block !important;
+    }
+    .big-renglon .big-botonera {
+        text-align: initial;
+    }
+    .big-responsive-aut {
+        margin-left: -19px;
+    }
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -1,0 +1,27 @@
+body{
+    background-image: url('../../assets/img/login/v2-login-bg.jpg');
+    background-size: contain;
+    background-position-x: left;
+}
+
+.big-contenedor-principal-login .big-bg-principal .big-login-contenedor form{
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.big-contenedor-principal-login .big-bg-principal .big-login-contenedor form .mat-form-field{
+	width: 80%;
+    margin: 0 10% 10px 10%;
+    max-width: 400px
+}
+
+
+@media only screen and (max-width: 768px) {
+	.big-login-contenedor{ width: 90%; margin: 0 5%; margin-top: 7vh; }
+}
+
+.margenBtm{  
+    margin: 30% 30%10%;
+}

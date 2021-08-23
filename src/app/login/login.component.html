@@ -1,0 +1,35 @@
+<div class="big-contenedor-principal-login">
+    <div class="big-bg-principal">
+        <div class="big-login-contenedor">
+
+            <h1 class="logoPM margenBtm" >
+                <span>Bienvenido a</span>
+                <strong>Portal SIC</strong>
+            </h1>
+
+            <strong class="iniciar-sesion">Iniciar Sesión</strong>
+
+            <form [formGroup]="IniciarSesion" (ngSubmit)="ServicioIniciarSesion()" name="IniciarSesion">
+                <mat-form-field class="big-input-standar" floatLabel="always" appearance="fill">
+                    <mat-label>Número de empleado</mat-label>
+                    <input matInput maxlength="6" SoloNumeros type="text" formControlName="usuario" autocomplete="off" >
+                    <mat-error *ngIf="!IniciarSesion.controls['usuario'].valid">Debe ingresar máximo 6 caracteres
+                    </mat-error>
+                    <mat-error *ngIf="">Este campo es requerido</mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="big-input-standar" floatLabel="always" appearance="fill">
+                    <mat-label>Contraseña</mat-label>
+                    <input matInput maxlength="6" SoloNumeros type="password" formControlName="token"
+                        autocomplete="off">
+                    <mat-error *ngIf="!IniciarSesion.controls['token'].valid">Debe ingresar máximo 6 caracteres
+                    </mat-error>
+                    <mat-error *ngIf="">Este campo es requerido</mat-error>
+                </mat-form-field>
+
+                <button mat-raised-button [disabled]="IniciarSesion.invalid" class="big-btn-verde"
+                    type="submit">Ingresar</button>
+            </form>
+        </div>
+    </div>
+</div>
